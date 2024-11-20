@@ -41,7 +41,7 @@ public class Main extends Application {
 
     //One of the parameter should be PDF
     @FXML
-    private void PDFtoCSV() throws Exception(){
+    private void PDFtoCSV() throws Exception{
         // TODO: Convert PDF into csv. It should output a CSV File.
         File file = new File("C:\\Users\\natha\\IdeaProjects\\CPA2\\FinalProject_LBYCPA2-main\\src\\main\\resources\\DECE UPDATED FACULTY LOAD T2, 2023-2024 as of Feb 22, 2024 (1).pdf");
         FileInputStream fis = new FileInputStream(file);    // change pathname according to your machine
