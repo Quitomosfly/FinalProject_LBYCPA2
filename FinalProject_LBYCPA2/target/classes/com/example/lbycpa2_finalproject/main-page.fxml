@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="72.0" layoutY="84.0" prefHeight="650.0" prefWidth="745.0">
+        <columns>
+          <TableColumn prefWidth="120.00003051757812" text="Time" />
+          <TableColumn prefWidth="65.60000610351562" text="Monday" />
+            <TableColumn prefWidth="75.0" text="Tuesday" />
+            <TableColumn prefWidth="75.0" text="Wednesday" />
+            <TableColumn prefWidth="75.0" text="Thursday" />
+            <TableColumn prefWidth="75.0" text="Friday" />
+            <TableColumn prefWidth="75.0" text="Saturday" />
+            <TableColumn prefWidth="75.0" text="Sunday" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <ComboBox layoutX="72.0" layoutY="37.0" prefWidth="150.0" />
+      <Text layoutX="72.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panelists" />
+   </children>
+</AnchorPane>
