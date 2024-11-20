@@ -40,6 +40,28 @@ public class Main extends Application {
     @FXML
     private void PDFtoCSV(){
         // TODO: Convert PDF into csv. It should output a CSV File.
+        File file = new File("C:\\Users\\natha\\IdeaProjects\\CPA2\\FinalProject_LBYCPA2-main\\src\\main\\resources\\DECE UPDATED FACULTY LOAD T2, 2023-2024 as of Feb 22, 2024 (1).pdf");
+        FileInputStream fis = new FileInputStream(file);    // change pathname according to your machine
+        PDDocument doc =  PDDocument.load(fis);
+
+        PDFTextStripper reader = new PDFTextStripper(); // reader
+        String text = reader.getText(doc);
+
+        // SORTING
+        String[] surnames = new String[100];    // array of surnames
+        int count = 0;
+        String[] lines = text.split("\n");    // split text into lines
+        for (int i = 0; i < lines.length; i++) {
+            String[] words = lines[i].split(" ");   // split lines into words
+            if (words[0].contains(",")) {   // if first word is a surname (contains comma)
+                System.out.println(words[0]);
+                surnames[count] = words[0]; // get length of words array, if less than: no middle name
+                System.out.println("LENGTH: " + words.length);
+            }
+        }
+        // SORTING
+
+        System.out.println(text);
     }
 
 
