@@ -10,10 +10,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+
+import java.io.*;
+
 //Test test test
 public class Main extends Application {
     @FXML
@@ -69,8 +68,14 @@ public class Main extends Application {
                 System.out.println("LENGTH: " + words.length);
             }
         }
-        // SORTING
-        System.out.println(text);
+        // WRITING
+        File unorganized_csv = new File("C:\\Users\\natha\\IdeaProjects\\FinalProject_LBYCPA2\\src\\main\\resources\\unorganized_csv.txt");
+        if (unorganized_csv.createNewFile()) {
+            System.out.println("File created: " + unorganized_csv.getName());
+        }
+        FileWriter writer = new FileWriter("C:\\Users\\natha\\IdeaProjects\\FinalProject_LBYCPA2\\src\\main\\resources\\unorganized_csv.txt");
+        writer.write(text);
+        writer.close();
     }
 
 
