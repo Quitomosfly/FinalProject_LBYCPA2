@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="399.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lbycpa2_finalproject.Main">
    <children>
-      <TextField layoutX="99.0" layoutY="187.0" prefHeight="26.0" prefWidth="400.0" />
+      <TextField fx:id="pdfPath" layoutX="99.0" layoutY="187.0" prefHeight="26.0" prefWidth="400.0" />
       <Button fx:id="button" layoutX="273.0" layoutY="250.0" mnemonicParsing="false" onAction="#MainPage" text="Begin?" />
       <Text layoutX="258.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENTER PDF FILE" />
    </children>
