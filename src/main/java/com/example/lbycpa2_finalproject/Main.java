@@ -47,6 +47,7 @@ public class Main extends Application {
     //One of the parameter should be PDF
     @FXML
     private void PDFtoCSV() throws IOException {
+        //PAULS UPDATE
         String pdfFile = pdfPath.getText();
         System.out.println(pdfFile);
         // TODO: Convert PDF into csv. It should output a CSV File.
