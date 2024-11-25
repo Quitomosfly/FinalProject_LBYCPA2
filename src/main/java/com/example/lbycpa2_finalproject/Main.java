@@ -79,7 +79,7 @@ public class Main extends Application {
     }
 
 
-    private void CleanUpCSV(){
+    private void CleanUpCSV(File Nathan){
         // TODO: The raw CSV should be polished. The output will be a better CSV format.
     }
 
