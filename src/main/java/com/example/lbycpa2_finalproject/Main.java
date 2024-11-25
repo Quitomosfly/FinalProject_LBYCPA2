@@ -69,11 +69,11 @@ public class Main extends Application {
             }
         }
         // WRITING
-        File unorganized_csv = new File("C:\\Users\\natha\\IdeaProjects\\FinalProject_LBYCPA2\\src\\main\\resources\\unorganized_csv.txt");
+        File unorganized_csv = new File("src/main/resources/unorganized_csv.txt");
         if (unorganized_csv.createNewFile()) {
             System.out.println("File created: " + unorganized_csv.getName());
         }
-        FileWriter writer = new FileWriter("C:\\Users\\natha\\IdeaProjects\\FinalProject_LBYCPA2\\src\\main\\resources\\unorganized_csv.txt");
+        FileWriter writer = new FileWriter("src/main/resources/unorganized_csv.txt");
         writer.write(text);
         writer.close();
     }
