@@ -79,7 +79,7 @@ public class Main extends Application {
     }
 
 
-    private void CleanUpCSV() throws IOException {
+    private void CleanUpCSV(File Nathan) throws IOException {
 
         File rawCsvFile = new File("src/main/resources/unorganized_csv.txt");
 
