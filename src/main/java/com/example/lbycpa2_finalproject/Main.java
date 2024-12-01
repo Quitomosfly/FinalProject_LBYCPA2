@@ -117,6 +117,7 @@ public class Main extends Application {
         writer.write(cleanedContent.toString());
         writer.close();
 
+
     }
 
 
