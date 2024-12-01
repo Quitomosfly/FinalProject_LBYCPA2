@@ -79,9 +79,47 @@ public class Main extends Application {
     }
 
 
-    private void CleanUpCSV(){
-        // TODO: The raw CSV should be polished. The output will be a better CSV format.
+    private void CleanUpCSV(File Nathan) throws IOException {
+
+        File rawCsvFile = new File("src/main/resources/unorganized_csv.txt");
+
+        BufferedReader reader = new BufferedReader(new FileReader(rawCsvFile));
+        StringBuilder cleanedContent = new StringBuilder();
+
+        String line;
+        while ((line = reader.readLine()) != null) {
+            line = line.replaceAll("\\s+", " ").trim();
+
+            if (line.isEmpty()) {
+                continue;
+            }
+
+            String[] parts = line.split(",");
+
+            if (parts.length % 2 == 1) {
+                line += ",";
+            }
+
+            line = line.replaceAll("\"", "");
+
+
+            cleanedContent.append(line).append("\n");
+        }
+
+        reader.close();
+
+        File cleanedCsvFile = new File("src/main/resources/organized_csv.txt");
+        if (!cleanedCsvFile.exists()) {
+            cleanedCsvFile.createNewFile();
+        }
+
+        FileWriter writer = new FileWriter(cleanedCsvFile);
+        writer.write(cleanedContent.toString());
+        writer.close();
+
+
     }
+
 
 
     public static void main(String[] args) {
