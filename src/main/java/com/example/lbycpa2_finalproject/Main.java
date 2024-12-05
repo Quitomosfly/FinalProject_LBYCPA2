@@ -30,8 +30,8 @@ public class Main extends Application {
 
     @FXML
     private void MainPage() throws IOException {
-        PDFtoCSV();
-//        CleanUpCSV();
+ //          PDFtoCSV();
+        CleanUpCSV();
 //        Stage currentStage = (Stage) button.getScene().getWindow();
 //        currentStage.close();
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main-page.fxml"));
@@ -79,35 +79,73 @@ public class Main extends Application {
     }
 
 
-    private void CleanUpCSV(File Nathan) throws IOException {
+    private void CleanUpCSV() throws IOException {
 
         File rawCsvFile = new File("src/main/resources/unorganized_csv.txt");
-
         BufferedReader reader = new BufferedReader(new FileReader(rawCsvFile));
         StringBuilder cleanedContent = new StringBuilder();
 
+        // Write the headers first
+        cleanedContent.append("Faculty Name,Days,Time\n");
+
         String line;
+        String facultyName = "";
+        String currentFacultyLastName = "";
+
+        // Iterate through each line of the raw data
         while ((line = reader.readLine()) != null) {
+            // Clean up excessive spaces and remove leading/trailing spaces
             line = line.replaceAll("\\s+", " ").trim();
 
+            // Skip empty lines
             if (line.isEmpty()) {
                 continue;
             }
 
-            String[] parts = line.split(",");
-
-            if (parts.length % 2 == 1) {
-                line += ",";
+            // Skip "TOTAL UNITS" line
+            if (line.contains("TOTAL UNITS")) {
+                continue;
             }
 
-            line = line.replaceAll("\"", "");
+            // Handle "FACULTY NAME" or faculty name rows (only last and first name)
+            if (line.contains(",")) {
+                // Split by comma to capture Faculty Name (First and Last)
+                String[] parts = line.split(",");
 
+                // Handle faculty name
+                if (parts.length >= 2) {
+                    currentFacultyLastName = parts[0].trim();  // Last Name
+                    facultyName = currentFacultyLastName + " " + parts[1].trim(); // First Name
+                }
+                continue; // Skip this row, as it's part of the faculty name
+            }
 
-            cleanedContent.append(line).append("\n");
+            // Skip faculty-specific rows that are not related to Days or Time (e.g., "SUBJECT", "FACULTY", etc.)
+            if (line.contains("FACULTY") || line.contains("LEAVE") || line.contains("SUBJECT")) {
+                continue;
+            }
+
+            // Process Days and Time rows (should contain at least 2 parts: Days, Time)
+            String[] parts = line.split(" "); // Split by spaces
+            if (parts.length < 2) {
+                continue; // Skip rows that do not contain at least two parts
+            }
+
+            // Extract days and time
+            String days = parts[0];  // First part is Days
+            String time = parts[1];  // Second part is Time
+
+            // Format days and time for consistency
+            days = formatDays(days);  // Normalize days (e.g., "M", "T", "TF")
+            time = formatTime(time);  // Normalize time (e.g., "1300-1400")
+
+            // Write the cleaned row
+            cleanedContent.append(String.format("\"%s\",\"%s\",\"%s\"\n", facultyName, days, time));
         }
 
         reader.close();
 
+        // Write cleaned data to a new CSV file
         File cleanedCsvFile = new File("src/main/resources/organized_csv.txt");
         if (!cleanedCsvFile.exists()) {
             cleanedCsvFile.createNewFile();
@@ -116,13 +154,35 @@ public class Main extends Application {
         FileWriter writer = new FileWriter(cleanedCsvFile);
         writer.write(cleanedContent.toString());
         writer.close();
-
-
+    }
+    private String formatDays(String days) {
+        switch (days) {
+            case "M":
+                return "M";
+            case "T":
+                return "T";
+            case "F":
+                return "F";
+            case "TF":
+                return "T, F";
+            case "MH":
+                return "M, H";  // Assuming H is for Thursday
+            default:
+                return days;  // Return as is if not in predefined options
+        }
     }
 
+    private String formatTime(String time) {
+        if (time.contains("-")) {
+            return time; // If time already contains range, return as-is
+        } else {
+            return time + "-" + time; // If no range, assume same start and end time
+        }
+    }
+    public static void main(String[] args) throws IOException {
 
-
-    public static void main(String[] args) {
+        Main processor = new Main();
+        processor.CleanUpCSV();
         launch();
     }
 }
