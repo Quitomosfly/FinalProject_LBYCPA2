@@ -147,7 +147,7 @@ public class Main extends Application {
             case "F":
                 return "F";
             default:
-                return days;
+                return days; //days
         }
     }
 
@@ -157,7 +157,7 @@ public class Main extends Application {
         if (time.contains("-")) {
             return time;
         } else {
-            return time + "-" + time;
+            return time + "-" + time; //time
         }
     }
     public static void main(String[] args) throws IOException {
