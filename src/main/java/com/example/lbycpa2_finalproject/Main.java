@@ -85,67 +85,45 @@ public class Main extends Application {
         BufferedReader reader = new BufferedReader(new FileReader(rawCsvFile));
         StringBuilder cleanedContent = new StringBuilder();
 
-        // Write the headers first
         cleanedContent.append("Faculty Name,Days,Time\n");
 
         String line;
         String facultyName = "";
-        String currentFacultyLastName = "";
 
-        // Iterate through each line of the raw data
         while ((line = reader.readLine()) != null) {
-            // Clean up excessive spaces and remove leading/trailing spaces
             line = line.replaceAll("\\s+", " ").trim();
 
-            // Skip empty lines
-            if (line.isEmpty()) {
+
+            if (line.isEmpty() || line.contains("TOTAL UNITS") || line.contains("FACULTY") || line.contains("SEC") || line.contains("SUBJECT")) {
                 continue;
             }
 
-            // Skip "TOTAL UNITS" line
-            if (line.contains("TOTAL UNITS")) {
-                continue;
-            }
 
-            // Handle "FACULTY NAME" or faculty name rows (only last and first name)
             if (line.contains(",")) {
-                // Split by comma to capture Faculty Name (First and Last)
                 String[] parts = line.split(",");
-
-                // Handle faculty name
-                if (parts.length >= 2) {
-                    currentFacultyLastName = parts[0].trim();  // Last Name
-                    facultyName = currentFacultyLastName + " " + parts[1].trim(); // First Name
-                }
-                continue; // Skip this row, as it's part of the faculty name
-            }
-
-            // Skip faculty-specific rows that are not related to Days or Time (e.g., "SUBJECT", "FACULTY", etc.)
-            if (line.contains("FACULTY") || line.contains("LEAVE") || line.contains("SUBJECT")) {
+                facultyName = parts[0].trim();
                 continue;
             }
 
-            // Process Days and Time rows (should contain at least 2 parts: Days, Time)
-            String[] parts = line.split(" "); // Split by spaces
-            if (parts.length < 2) {
-                continue; // Skip rows that do not contain at least two parts
+            String[] parts = line.split(" ");
+            if (parts.length < 5) {
+                continue;
             }
 
-            // Extract days and time
-            String days = parts[0];  // First part is Days
-            String time = parts[1];  // Second part is Time
+            String days = parts[parts.length - 5];
+            String time = parts[parts.length - 4];
 
-            // Format days and time for consistency
-            days = formatDays(days);  // Normalize days (e.g., "M", "T", "TF")
-            time = formatTime(time);  // Normalize time (e.g., "1300-1400")
+            days = formatDays(days);
+            time = formatTime(time);
 
-            // Write the cleaned row
-            cleanedContent.append(String.format("\"%s\",\"%s\",\"%s\"\n", facultyName, days, time));
+            if (days.equals("–") || days.equals("-") || time.equals("–") || time.equals("-")) {
+                continue;
+            }
+
+            cleanedContent.append(String.format("%s,%s,%s\n", facultyName, days, time));
         }
 
         reader.close();
-
-        // Write cleaned data to a new CSV file
         File cleanedCsvFile = new File("src/main/resources/organized_csv.txt");
         if (!cleanedCsvFile.exists()) {
             cleanedCsvFile.createNewFile();
@@ -155,28 +133,31 @@ public class Main extends Application {
         writer.write(cleanedContent.toString());
         writer.close();
     }
+
     private String formatDays(String days) {
         switch (days) {
             case "M":
                 return "M";
             case "T":
                 return "T";
+            case "W":
+                return "W";
+            case "H":
+                return "H";
             case "F":
                 return "F";
-            case "TF":
-                return "T, F";
-            case "MH":
-                return "M, H";  // Assuming H is for Thursday
             default:
-                return days;  // Return as is if not in predefined options
+                return days;
         }
     }
 
     private String formatTime(String time) {
+        time = time.replace(" – ", "-");
+
         if (time.contains("-")) {
-            return time; // If time already contains range, return as-is
+            return time;
         } else {
-            return time + "-" + time; // If no range, assume same start and end time
+            return time + "-" + time;
         }
     }
     public static void main(String[] args) throws IOException {
