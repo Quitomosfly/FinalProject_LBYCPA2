@@ -106,12 +106,12 @@ public class Main extends Application {
             }
 
             String[] parts = line.split(" ");
-            if (parts.length < 6) {
+            if (parts.length < 5) {
                 continue;
             }
 
-            String days = parts[parts.length - 6];
-            String time = parts[parts.length - 5];
+            String days = parts[parts.length - 5];
+            String time = parts[parts.length - 4];
 
             days = formatDays(days);
             time = formatTime(time);
