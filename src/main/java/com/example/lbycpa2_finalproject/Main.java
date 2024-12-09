@@ -123,7 +123,7 @@ public class Main extends Application {
         // Display the main page in a new stage
         Stage stage = new Stage();
         Scene scene = new Scene(root);
-        stage.setResizable(true);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.setTitle("Main Page");
         stage.show();

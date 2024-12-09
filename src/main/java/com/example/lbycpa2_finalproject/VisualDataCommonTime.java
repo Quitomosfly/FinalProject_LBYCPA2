@@ -154,6 +154,7 @@ public class VisualDataCommonTime {
 
 
     public void setPanelistsName(String[] listOfPanelists) {
+        Arrays.sort(listOfPanelists);
         panelistMenu.getItems().clear();
         this.listOfPaneLlists = listOfPanelists;
         for (String panelist : listOfPanelists) {
