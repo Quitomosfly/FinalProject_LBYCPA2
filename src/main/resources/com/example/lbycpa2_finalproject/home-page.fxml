@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="399.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lbycpa2_finalproject.Main">
+<AnchorPane fx:id="anchorPane" prefHeight="399.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lbycpa2_finalproject.Main">
    <children>
-      <TextField fx:id="pdfPath" layoutX="99.0" layoutY="187.0" prefHeight="26.0" prefWidth="400.0" />
-      <Button fx:id="button" layoutX="273.0" layoutY="250.0" mnemonicParsing="false" onAction="#MainPage" text="Begin?" />
-      <Text layoutX="258.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENTER PDF FILE" />
+      <TextField fx:id="pdfPath" layoutX="114.0" layoutY="351.0" prefHeight="26.0" prefWidth="400.0" />
+      <Button fx:id="button" layoutX="274.0" layoutY="303.0" mnemonicParsing="false" onAction="#MainPage" text="Begin?" />
+      <VBox fx:id="dragTarget" alignment="CENTER" layoutX="226.0" layoutY="141.0" spacing="10" style="-fx-border-color: grey; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+         <Label fx:id="label" text="Drag a file here" />
+         <Label fx:id="dropped" text="" />
+      </VBox>
    </children>
 </AnchorPane>
