@@ -161,7 +161,7 @@ public class Main extends Application {
         if (time.contains("-")) {
             return time;
         } else {
-            return "-";
+            return time + "-";
         }
     }
     public static void main(String[] args) throws IOException {
