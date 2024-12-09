@@ -120,7 +120,7 @@ public class Main extends Application {
                 continue;
             }
 
-            cleanedContent.append(String.format("%s,%s,%s\n", facultyName, days, time));
+            cleanedContent.append(String.format("%s,%s,%s \n", facultyName, days, time));
         }
 
         reader.close();
@@ -144,20 +144,24 @@ public class Main extends Application {
                 return "W";
             case "H":
                 return "H";
-            case "F":
-                return "F";
+            case "S":
+                return "S";
+            case "MH":
+                return "MH";
+            case "TF":
+                return "TF";
             default:
                 return days;
         }
     }
 
     private String formatTime(String time) {
-        time = time.replace(" – ", "-");
+        time = time.replace(" - ", "-");
 
         if (time.contains("-")) {
             return time;
         } else {
-            return time + "-" + time;
+            return "-";
         }
     }
     public static void main(String[] args) throws IOException {
