@@ -4,110 +4,147 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1056.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lbycpa2_finalproject.VisualDataCommonTime">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1056.0" style="-fx-background-color: #ECEAE4;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lbycpa2_finalproject.VisualDataCommonTime">
    <children>
       <Button layoutX="183.0" layoutY="36.0" mnemonicParsing="false" onAction="#Refresh" text="Button" />
-      <ScrollPane layoutX="47.0" layoutY="108.0" prefHeight="564.0" prefWidth="978.0">
+      <ScrollPane layoutX="23.0" layoutY="110.0" prefHeight="635.0" prefWidth="1010.0">
          <content>
-            <Pane prefHeight="1078.0" prefWidth="978.0">
+            <Pane prefHeight="1326.0" prefWidth="993.0">
                <children>
-                  <HBox layoutX="123.0" layoutY="8.0" prefHeight="34.0" prefWidth="226.0" spacing="100.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Saturday" />
-                     </children>
-                  </HBox>
-                  <VBox layoutX="38.0" layoutY="42.0" prefHeight="1021.0" prefWidth="36.0" snapToPixel="false" spacing="13.0">
+                  <GridPane layoutX="-88.0" layoutY="53.0" pickOnBounds="false" prefHeight="1342.0" prefWidth="1048.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="6:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="6:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="8:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="8:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="15:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="15:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="16:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="16:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="17:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="17:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="18:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="18:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="19:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="19:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="20:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="20:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="21:00" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="21:30" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="22:00" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="6:30" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7:00" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7:30" GridPane.rowIndex="3" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="8:00" GridPane.rowIndex="4" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="8:30" GridPane.rowIndex="5" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9:00" GridPane.rowIndex="6" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9:30" GridPane.rowIndex="7" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10:00" GridPane.rowIndex="8" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10:30" GridPane.rowIndex="9" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11:00" GridPane.rowIndex="10" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11:30" GridPane.rowIndex="11" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12:00" GridPane.rowIndex="12" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12:30" GridPane.rowIndex="13" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13:00" GridPane.rowIndex="14" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13:30" GridPane.rowIndex="15" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14:00" GridPane.rowIndex="16" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14:30" GridPane.rowIndex="17" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="15:00" GridPane.rowIndex="18" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="16:00" GridPane.rowIndex="20" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="16:30" GridPane.rowIndex="21" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="15:30" GridPane.rowIndex="19" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="17:00" GridPane.rowIndex="22" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="20:00" GridPane.rowIndex="28" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="19:00" GridPane.rowIndex="26" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="18:30" GridPane.rowIndex="25" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="19:30" GridPane.rowIndex="27" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="18:00" GridPane.rowIndex="24" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="17:30" GridPane.rowIndex="23" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="21:30" GridPane.rowIndex="31" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="21:00" GridPane.rowIndex="30" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="22:00" GridPane.rowIndex="32" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="20:30" GridPane.rowIndex="29" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="20" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="22" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="24" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="26" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="28" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="30" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="32" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <Line endX="706.0928344726562" endY="-0.7998465895652771" startX="-170.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
                      </children>
-                  </VBox>
-                  <VBox layoutX="96.0" layoutY="50.0" prefHeight="954.0" prefWidth="1404.0" spacing="29.0">
+                  </GridPane>
+                  <VBox fx:id="mondayVBox" alignment="TOP_CENTER" layoutX="89.0" layoutY="74.0" pickOnBounds="false" prefHeight="1165.0" prefWidth="100.0" />
+                  <VBox fx:id="tuesdayVBox" alignment="TOP_CENTER" layoutX="235.0" layoutY="74.0" prefHeight="1136.0" prefWidth="100.0" />
+                  <VBox fx:id="wednesdayVBox" alignment="TOP_CENTER" layoutX="386.0" layoutY="74.0" prefHeight="1136.0" prefWidth="100.0" />
+                  <VBox fx:id="thursdayVBox" alignment="TOP_CENTER" layoutX="535.0" layoutY="74.0" prefHeight="1136.0" prefWidth="100.0" />
+                  <VBox fx:id="fridayVBox" alignment="TOP_CENTER" layoutX="689.0" layoutY="74.0" prefHeight="1136.0" prefWidth="100.0" />
+                  <VBox fx:id="saturdayVBox" alignment="TOP_CENTER" layoutX="830.0" layoutY="74.0" prefHeight="1136.0" prefWidth="100.0" />
+                  <GridPane alignment="CENTER" layoutX="61.0" layoutY="40.0" prefHeight="30.0" prefWidth="899.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                      <children>
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-794.9052734375" startY="-8.90400505065918" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" />
-                        <Line endX="607.3999633789062" endY="7.62939453125E-6" startX="-244.40000915527344" startY="7.62939453125E-6" stroke="#0000003a" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" GridPane.columnIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" GridPane.columnIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" GridPane.columnIndex="3" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" GridPane.columnIndex="4" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Saturday" GridPane.columnIndex="5" />
                      </children>
-                  </VBox>
-                  <VBox fx:id="mondayVBox" layoutX="96.0" layoutY="51.0" prefHeight="1015.0" prefWidth="100.0" />
-                  <VBox fx:id="tuesdayVBox" layoutX="243.0" layoutY="51.0" prefHeight="1008.0" prefWidth="100.0" />
-                  <VBox fx:id="wednesdayVBox" layoutX="389.0" layoutY="51.0" prefHeight="1015.0" prefWidth="100.0" />
-                  <VBox fx:id="thursdayVBox" layoutX="547.0" layoutY="51.0" prefHeight="1013.0" prefWidth="100.0" />
-                  <VBox fx:id="fridayVBox" layoutX="687.0" layoutY="51.0" prefHeight="1017.0" prefWidth="100.0" />
-                  <VBox fx:id="saturdayVBox" layoutX="821.0" layoutY="51.0" prefHeight="1015.0" prefWidth="100.0" />
+                  </GridPane>
                </children>
             </Pane>
          </content>

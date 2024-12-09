@@ -1,12 +1,5 @@
 package com.example.lbycpa2_finalproject;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-
-import java.util.Arrays;
-
 import static com.example.lbycpa2_finalproject.Main.scheduleLength;
 
 public class CompiledSchedule {
@@ -17,8 +10,6 @@ public class CompiledSchedule {
     private int[] fridayCommonTime;
     private int[] saturdayCommonTime;
 
-    @FXML
-    private Rectangle rectangle;
     public CompiledSchedule(){
 
         mondayCommonTime = new int[scheduleLength];
@@ -84,5 +75,29 @@ public class CompiledSchedule {
 
     public void setSaturdayCommonTime(int[] saturdayCommonTime) {
         this.saturdayCommonTime = saturdayCommonTime;
+    }
+    public void setTuesdayFridayCommonTime(int[] tuesdayFridayCommonTime) {
+        this.tuesdayCommonTime = combineArrays(this.tuesdayCommonTime, tuesdayFridayCommonTime);
+        this.fridayCommonTime = combineArrays(this.fridayCommonTime, tuesdayFridayCommonTime);
+    }
+
+    public void setMondayThursdayCommonTime(int[] mondayThursdayCommonTime) {
+        this.mondayCommonTime = combineArrays(this.mondayCommonTime, mondayThursdayCommonTime);
+        this.thursdayCommonTime = combineArrays(this.thursdayCommonTime, mondayThursdayCommonTime);
+    }
+
+    // Helper method to combine two arrays based on the logic provided
+    private int[] combineArrays(int[] original, int[] newArray) {
+        int[] combinedArray = new int[original.length];
+
+        for (int i = 0; i < original.length; i++) {
+            if (original[i] == 0 || newArray[i] == 0) {
+                combinedArray[i] = 0;
+            } else {
+                combinedArray[i] = 1;
+            }
+        }
+
+        return combinedArray;
     }
 }

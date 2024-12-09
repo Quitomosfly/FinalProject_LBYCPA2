@@ -94,8 +94,8 @@ public class Main extends Application {
 
     @FXML
     private void MainPage() throws IOException {
-//        PDFtoCSV(filePath);
-//        CleanUpCSV();
+        PDFtoCSV(filePath);
+        CleanUpCSV();
         // Load the panelist data from the CSV file
         String[][] panelists = csvToStringArray("src/main/resources/organized_csv.txt");
         if (panelists == null || panelists.length == 0) {
@@ -111,6 +111,8 @@ public class Main extends Application {
         String[] arrayOfPanelists = uniqueNamesSet.toArray(new String[0]);
 
         // Load the main page FXML
+        Stage currentStage = (Stage) button.getScene().getWindow();
+        currentStage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main-page.fxml"));
         Parent root = fxmlLoader.load();
 
@@ -172,9 +174,7 @@ public class Main extends Application {
             for (String line : lines) {
                 String[] words = line.split(" "); // split lines into words
                 if (words[0].contains(",")) { // if first word is a surname (contains comma)
-                    System.out.println(words[0]);
                     surnames[count++] = words[0]; // get length of words array, if less than: no middle name
-                    System.out.println("LENGTH: " + words.length);
                 }
             }
 
